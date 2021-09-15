@@ -202,13 +202,7 @@ static transformer_state_t *setup_transformer_on_fd(int fd, int fail_if_not_comp
 			goto found_magic;
 		}
 	}
-	if (ENABLE_FEATURE_SEAMLESS_ZSTD
-	 && xstate->magic.b16[0] == ZSTD_MAGIC
-	) {
-		xstate->xformer = unpack_zstd_stream;
-		USE_FOR_NOMMU(xstate->xformer_prog = "unzstd";)
-		goto found_magic;
-	}
+
 	/* No known magic seen */
 	if (fail_if_not_compressed)
 		bb_simple_error_msg_and_die("no gzip"
