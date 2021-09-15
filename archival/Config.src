@@ -21,6 +21,10 @@ config FEATURE_SEAMLESS_GZ
 	bool "Make tar, rpm, modprobe etc understand .gz data"
 	default y
 
+config FEATURE_SEAMLESS_ZSTD
+	bool "Make tar, rpm, modprobe etc understand .zstd data"
+	default y
+
 config FEATURE_SEAMLESS_Z
 	bool "Make tar, rpm, modprobe etc understand .Z data"
 	default n  # it is ancient
