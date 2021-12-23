@@ -402,9 +402,6 @@ static int readLines(const char *file, int num)
 	charCount = 0;
 	cc = 0;
 
-	printf("\"%s\", ", file);
-	fflush_all();
-
 	do {
 		cp = memchr(bufPtr, '\n', bufUsed);
 
@@ -1016,8 +1013,6 @@ int ed_main(int argc UNUSED_PARAM, char **argv)
 		if (!readLines(fileName, 1)) {
 			return EXIT_SUCCESS;
 		}
-		if (lastNum)
-			setCurNum(1);
 		dirty = FALSE;
 	}
 
